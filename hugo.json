@@ -1,0 +1,9 @@
+{
+  "baseURL": "https://example.org/",
+  "title": "repl",
+  "publishDir": "_site",
+  "enableRobotsTXT": true,
+  "params": {
+    "description": "Public documentation for yupsh/repl."
+  }
+}
