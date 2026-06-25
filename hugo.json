@@ -3,6 +3,14 @@
   "title": "repl",
   "publishDir": "_site",
   "enableRobotsTXT": true,
+  "markup": {
+    "goldmark": {
+      "renderHooks": {
+        "link": { "useEmbedded": "fallback" },
+        "image": { "useEmbedded": "fallback" }
+      }
+    }
+  },
   "params": {
     "description": "Public documentation for yupsh/repl."
   }
