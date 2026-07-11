@@ -2,20 +2,20 @@
 title: repl
 ---
 
-# Yup Shell (yupsh)
+## Yup Shell (yupsh)
 
 An interactive shell — a REPL — for the [gloo-foo](https://github.com/gloo-foo) ecosystem. It composes the [gloo-foo/framework](https://github.com/gloo-foo/framework) typed-stream pipeline out of the [`gloo-foo/cmd-*`](https://github.com/gloo-foo) command modules, giving a familiar shell interface backed entirely by type-safe Go commands — no external processes for the core tools.
 
 The prompt is `yup>`; the program is `yupsh` (Yup **Sh**ell, like `bash`/`fish`).
 
-## Pages
+### Pages
 
 - **[Usage](Usage)** — running the shell, the input model, examples
 - **[Commands](Commands)** — the command catalogue and what is/isn't wired
 - **[Architecture](Architecture)** — how a line becomes a pipeline; adding a command
 - **[Development](Development)** — the quality gate, integration tests, contributing
 
-## Features
+### Features
 
 - **Typed-stream pipelines** — every stage is a `gloo.Command[[]byte, []byte]`, composed with `|` and run through the framework's `RunContext`.
 - **Source and filter commands** — sources (`echo`, `seq`, `ls`, `find`, `yes`, `emit`) start a pipeline; filters (`grep`, `wc`, `sort`, …) transform it.
@@ -25,7 +25,7 @@ The prompt is `yup>`; the program is `yupsh` (Yup **Sh**ell, like `bash`/`fish`)
 - **Interactive history & editing** — on a TTY, up/down history and in-line editing via `golang.org/x/term`; piped input uses plain scanning.
 - **Built-ins** — `help`, `version`, `clear`, `exit`/`quit`, and `#` comments.
 
-## Install
+### Install
 
 ```bash
 go install github.com/yupsh/repl/yupsh@latest
@@ -33,7 +33,7 @@ go install github.com/yupsh/repl/yupsh@latest
 
 Installs a `yupsh` binary to `$GOPATH/bin` (or `$HOME/go/bin`).
 
-## Quick start
+### Quick start
 
 ```text
 yupsh REPL v0.2.0

@@ -2,14 +2,14 @@
 title: Development
 ---
 
-# Development
+## Development
 
-## Prerequisites
+### Prerequisites
 
 - Go 1.26+
 - The sibling `gloo-foo/framework` and `gloo-foo/cmd-*` checkouts (wired via `replace` directives in `go.mod` during local development).
 
-## Build & run
+### Build & run
 
 ```bash
 cd repl
@@ -17,7 +17,7 @@ go build -o yupsh ./yupsh
 ./yupsh
 ```
 
-## Quality gate
+### Quality gate
 
 The module pins its tooling in the `go.mod` `tool` stanza and gates every change through `make check` — it must exit zero:
 
@@ -27,7 +27,7 @@ make check    # gofumpt, go vet, staticcheck, gocognit (<=7), govulncheck, 100% 
 
 The `repl` package is held to **100% statement coverage**. `main` is the single os-wiring seam, excluded from coverage like the framework's own gate.
 
-## Integration tests
+### Integration tests
 
 Black-box tests build the real `yupsh` binary and drive it through stdin, asserting the tool's user-facing claims — pipelines compose, flags are translated, globs and `~` expand, files and quoting work, built-ins and errors behave. They deliberately do **not** re-test the underlying `cmd-*` behavior (that `wc` counts, that `grep` matches) — each command owns that.
 
@@ -39,7 +39,7 @@ make integration          # or: go test -tags integration ./...
 
 The aim is high confidence that the tool does what it claims, and that future changes don't silently break a claim — if a claim changes, its test changes too.
 
-## Contributing
+### Contributing
 
 1. Branch from `main`.
 2. Make the change; keep the `repl` package at 100% coverage and within the gate.

@@ -2,7 +2,7 @@
 title: Usage
 ---
 
-# Usage
+## Usage
 
 Start the shell:
 
@@ -16,7 +16,7 @@ Or drive it non-interactively (pipes and redirects use plain line scanning, so s
 yupsh < script.txt
 ```
 
-## Input model
+### Input model
 
 A pipeline's input is chosen by its **first** stage:
 
@@ -28,7 +28,7 @@ A pipeline's input is chosen by its **first** stage:
 
 Later stages must be filters — a source after a pipe, or file arguments on a non-first stage, are reported as errors.
 
-## Shell expansion
+### Shell expansion
 
 - **Globbing**: unquoted `*`, `?`, and `[…]` expand against the working directory. A pattern with no matches is left literal (POSIX default).
 - **Tilde**: a leading `~` or `~/…` expands to the home directory.
@@ -40,7 +40,7 @@ yup> wc -l *.md
 yup> cat ~/notes.txt | grep TODO
 ```
 
-## Examples
+### Examples
 
 ```text
 # sources
@@ -61,7 +61,7 @@ yup> echo hi | exec cat
 yup> echo hello | perl -p 's/l/L/g'
 ```
 
-## Built-ins
+### Built-ins
 
 - `help` — list commands and usage
 - `version` — show version

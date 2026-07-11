@@ -2,7 +2,7 @@
 title: Commands
 ---
 
-# Commands
+## Commands
 
 Run `help` in the shell for the live catalogue. Sources are marked `(source)`.
 
@@ -13,11 +13,11 @@ Run `help` in the shell for the live catalogue. Sources are marked `(source)`.
 - **Summarize**: `wc`, `sort`, `shuf`, `diff`, `hexdump`, `base64`, `json`
 - **External**: `exec`, `git`
 
-## Flags
+### Flags
 
 Flags are the responsibility of each `cmd-*` package; the REPL **translates** the Unix-style flags you type into the typed options those packages expose. For example `wc -l` → `wc.WcLines`, `head -n 10` / `head -10` → `head.HeadLines(10)`, `grep -v` → `grep.GrepInvert`. See each command's own repository for the full flag semantics.
 
-## Not wired
+### Not wired
 
 Some constructors require non-textual Go values and therefore cannot be built from a typed command line:
 

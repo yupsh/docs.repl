@@ -2,7 +2,7 @@
 title: Contributing
 ---
 
-# Contributing
+## Contributing
 
 Development setup, the quality gate, the integration tests, and the contribution workflow are documented in the project **wiki**.
 
